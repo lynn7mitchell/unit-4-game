@@ -91,17 +91,21 @@ $(document).ready(function () {
             if(opponent.hp <= 0){
                 newOpponent();
             }
+            if(userChoice.hp <= 0 && opponent.hp <= 0){
+                $("#battle-container").hide();
+                $("body").append("<h1>IT'S A DRAW!</h1>")
+            }
 
-            if(userChoice.hp <= 0){
-                console.log("WORKS")
+            if(userChoice.hp <= 0 && opponent.hp > 0){
                 $("#battle-container").hide();
                 $("body").append("<h1>YOU LOSE!</h1>")
             }
 
-            if(opponent.hp <= 0 && computerChoices.length <= 1){
+            if(opponent.hp <= 0 && computerChoices.length <= 1 && userChoice.hp > 0){
                 $("#battle-container").hide();
                 $("body").append("<h1>YOU WIN!</h1>")
             }
+            
         })
 
 
