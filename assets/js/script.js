@@ -1,5 +1,7 @@
 $(document).ready(function() {
 var userChoice;
+var computerChoices = [];
+var opponent;
 var pokemon = {
     pikachu: {
         name: "Pikachu",
@@ -33,7 +35,9 @@ var pokemon = {
 
 $("#pikachu").on("click", function(){
     userChoice = pokemon.pikachu;
+    computerChoice(userChoice)
     startGame();
+    
     
 })
 $("#bulbasaur").on("click", function(){
@@ -53,18 +57,37 @@ $("#squirtle").on("click", function(){
 })
     
 function startGame(){
-    userChoiceImg = $("<img/>");
-    userChoiceImg.attr('src', userChoice.img);
-    $("#user-choice").append(userChoiceImg);
+    $("#choice-container").hide();
+
+
+    //opponent
+    $("#random-choice").append("<img src=" + opponent.img + ">" );
+    $("#random-choice").append("<h2>HP: " + opponent.hp + "</h2>" );
+    $("#random-choice").append("<h2>HP: " + opponent.attack +"</h2>")
+
+
+    //userChoice
+    $("#user-choice").append("<img src=" + userChoice.img + ">" );
+    $("#user-choice").append("<h2>HP: " + userChoice.hp + "</h2>" );
+    $("#user-choice").append("<h2>HP: " + userChoice.attack +"</h2>")
 }
-function computerChoice(){
+function computerChoice(takenPokemon){
+    for(var i in pokemon){
+        console.log(i, takenPokemon)
+        if(pokemon[i] != takenPokemon){
+            computerChoices.push(pokemon[i])
+        }
+    }
+    opponent = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+    
 
 }
     
 
+// display hidden choices container DONE
 
-// display hidden choices container
 //even spacing with user-choice and computer choice
+
 //start game append the hp, attack name, and attack button to user choice div
 //make user choice multiply by 2 every time attack is pressed
 //math.random computer choice. random index of object

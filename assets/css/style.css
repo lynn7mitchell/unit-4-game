@@ -20,3 +20,7 @@ h1{
 img{
     height: 200px;
 }
+#battle-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
