@@ -1,0 +1,22 @@
+@font-face{
+    font-family: Pokemon-Solid;
+    src: url("../fonts/Pokemon/Pokemon-Solid.ttf");
+}
+@font-face{
+    font-family: Pokemon-GB;
+    src: ("../fonts/jackster-productions_pokemon-gb/Pokemon-GB.ttf");
+}
+body{
+    background: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Pokemon-GB, sans-serif;
+}
+h1{
+    font-family: Pokemon-Solid, sans-serif;
+    color: #fff;
+    letter-spacing: 3px;
+}
+img{
+    height: 200px;
+}

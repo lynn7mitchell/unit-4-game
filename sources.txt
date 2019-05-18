@@ -1,0 +1,10 @@
+Images:
+https://www.pokemon.com/us/pokedex
+
+Fonts:
+https://www.fontspace.com/jackster-productions/pokemon-gb
+https://www.dafont.com/pokemon.font
+
+
+Audio:
+https://github.com/yashoss/pokebattlejs/tree/master/lib/music (thanks to Gavin Akins for finding the repo)
