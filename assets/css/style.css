@@ -11,10 +11,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Pokemon-GB, sans-serif;
+    color: #fff;
 }
 h1{
     font-family: Pokemon-Solid, sans-serif;
-    color: #fff;
     letter-spacing: 3px;
 }
 img{
