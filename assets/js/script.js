@@ -81,7 +81,7 @@ $(document).ready(function () {
         $("#attack").on("click", function () {
             opponent.hp = opponent.hp - userChoice.attackPower;
             userChoice.hp = userChoice.hp - opponent.attackPower;
-            userChoice.attack = userChoice.attack + 10;
+            userChoice.attackPower = userChoice.attackPower * 2;
 
 
 
@@ -91,8 +91,18 @@ $(document).ready(function () {
             if(opponent.hp <= 0){
                 randomOpponent();
             }
+            if(userChoice.hp <= 0){
+                console.log("WORKS")
+                $("#battle-container").hide();
+                $("body").append("<h1>YOU LOSE!</h1>")
+            }
+    
+            if(opponent.hp <= 0 && computerChoices.length <= 1){
+                $("#battle-container").hide();
+                $("body").append("<h1>YOU WIN!</h1>")
+            }
         })
-
+        
 
     }
 
