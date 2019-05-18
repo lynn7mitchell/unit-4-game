@@ -92,7 +92,7 @@ $(document).ready(function () {
                 randomOpponent();
             }
 
-            if(userChoice.hp < 0){
+            if(userChoice.hp <= 0){
                 console.log("WORKS")
                 $("#battle-container").hide();
                 $("body").append("<h1>YOU LOSE!</h1>")
