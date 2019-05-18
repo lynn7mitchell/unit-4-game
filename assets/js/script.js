@@ -80,7 +80,6 @@ $(document).ready(function () {
 
         $("#attack").on("click", function () {
             opponent.hp = opponent.hp - userChoice.attackPower;
-            console.log(opponent.hp)
             userChoice.hp = userChoice.hp - opponent.attackPower;
             userChoice.attack = userChoice.attack + 10;
 
@@ -91,7 +90,6 @@ $(document).ready(function () {
 
             if(opponent.hp <= 0){
                 randomOpponent();
-                console.log("WORKS")
             }
         })
 
@@ -100,7 +98,6 @@ $(document).ready(function () {
 
     function computerChoice(takenPokemon) {
         for (var i in pokemon) {
-            console.log(i, takenPokemon)
             if (pokemon[i] != takenPokemon) {
                 computerChoices.push(pokemon[i])
             }
@@ -113,7 +110,7 @@ $(document).ready(function () {
     function randomOpponent() {
         opponent = computerChoices[Math.floor(Math.random() * computerChoices.length)]
         computerChoices.splice(computerChoices.indexOf(opponent))
-        
+        console.log(opponent)
         $("#opponent-img").attr("src", opponent.img);
         console.log(opponent.img);
         $("#opponent-hp").text('HP: ' + opponent.hp);
